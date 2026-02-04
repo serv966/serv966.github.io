@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <META NAME="Author" CONTENT="Reiko Arise">
+  <TITLE>Service Manual T966</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" 
+WIDTH="550">
+  <TR>
+    <TD>
+    <H3>Circuit Description (PCB-MAIN)</H3>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="80%">
+      <TR>
+        <TD BGCOLOR="#ffffc1">
+        <B><A HREF="5_1_1.html">Deflection Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffc1c1">
+        <B>High Voltage Block</B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffccff">
+        <B><A HREF="5_1_3.html">Power Block</A></B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <H4><HR ALIGN=LEFT><BR>
+    <TABLE WIDTH="100%" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        <B>High Voltage Block</B></TD> 
+        <TD>
+        <P ALIGN=RIGHT><A HREF="../6/diagram/schmain1.pdf" TARGET="_blank">SCHEMATIC
+        DIAGRAM for MAIN BLK</A></TD> 
+      </TR>
+    </TABLE></H4>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="100%">
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>High Voltage Output Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        This circuit generates resonance voltage pulse by the switching
+        of the high voltage FET (Q701) at the primary line of FBT (T701).
+        It is boosted by the FBT and generates the high voltage. In order
+        to stabilize the high voltage causing load changing, the high
+        voltage is bled at the resistance and input to the high voltage
+        control IC U701 (4 pin). This IC controls and stabilizes the
+        high voltage by controlling the switching pulse width of the
+        high voltage FET (Q701) . This switching pulse is output from
+        the control IC 1 pin. <BR>
+        If horizontal output circuit stops by some trouble, the circuit
+        stops high voltage circuit by preventing input of the 2fH to
+        the control IC. <BR>
+        The same conventional X-ray detection method is still used. However,
+        when the detection voltage (MON-XP) is input to the micro-controller,
+        and the preset reference voltage is exceeded, the micro-controller
+        causes entry to the power save mode, and the protector display
+        is indicated on the LEDs. The reference voltage differs according
+        to each individual Set. The detection voltage is read by the
+        micro-controller under predetermined conditions. The voltage
+        obtained by multiplying a fixed ratio becomes the reference voltage,
+        and this is stored to memory. When some trouble such as layer
+        shorting of the FBT secondary wiring (HV-8pin) causes the FBT
+        tertiary wiring (5-7pin) output to drop, this drop is detected
+        by Q724 to switch the MON-XP detection voltage to the micro-controller
+        to High, and shift to protector operation in the same way.<BR>
+        The voltage obtained by rectifying that waveform output from
+        the 4pin and 1 pin of the FBT is used as the power supply for
+        the cut off control circuit in the video circuit and VDF circuit.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>DF Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The DF wave IC (U761) generates horizontal and vertical parabola
+        wave for the focus. (H.DF, V.DF). The H. DRV and V.SAW is the
+        sync signal for each wave and input to the 17 and 2 pin. <BR>
+        The U761 amplifies the H.DF/V.DF and controls the phase of H.DF.
+        It is controlled by the output voltage from the D/A converter
+        (U570). <BR>
+        The H.DF is amplified and boosted at the Q760~Q762. The V.DF
+        is amplified at Q763 and Q764 and impressed to the focus terminal
+        (13 pin) of the FBT.</TD> 
+      </TR>
+    </TABLE></TD>
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>

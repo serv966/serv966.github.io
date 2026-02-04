@@ -1,0 +1,843 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <TITLE>Service Manual T966</TITLE>
+  <SCRIPT language="JavaScript">
+<!--
+function OpenWin1(){
+    win1=window.open("wvv1.html","new1","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin2(){
+    win2=window.open("wvv2.html","new2","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin3(){
+    win3=window.open("wvv3.html","new3","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin4(){
+    win4=window.open("wvv4.html","new4","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin5(){
+    win5=window.open("wvv5.html","new5","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin6(){
+    win6=window.open("wvm1.html","new6","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin7(){
+    win7=window.open("wvm2.html","new7","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin8(){
+    win8=window.open("wvm3.html","new8","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin9(){
+    win9=window.open("wvm4.html","new9","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin10(){
+    win10=window.open("wvm5.html","new10","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin11(){
+    win11=window.open("wvm6.html","new11","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin12(){
+    win12=window.open("wvm7.html","new12","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin13(){
+    win13=window.open("wvm8.html","new13","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin14(){
+    win14=window.open("wvm9.html","new14","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin15(){
+    win15=window.open("wvm10.html","new15","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin16(){
+    win16=window.open("wvm11.html","new16","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin17(){
+    win17=window.open("wvm12.html","new17","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin18(){
+    win18=window.open("wvm13.html","new18","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin19(){
+    win19=window.open("wvm14.html","new19","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin20(){
+    win20=window.open("wvm15.html","new20","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin21(){
+    win21=window.open("wvm16.html","new21","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin22(){
+    win22=window.open("wvl1.html","new22","width=740,height=400,resizable=yes,toolbar=yes");
+}
+function OpenWin23(){
+    win23=window.open("wvv6.html","new22","width=660,height=510,resizable=yes,toolbar=yes");
+}
+function OpenWin24(){
+    win24=window.open("wvv7.html","new22","width=660,height=510,resizable=yes,toolbar=yes");
+}
+// -->
+  </SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" WIDTH="650" CELLSPACING="0" CELLPADDING="0">
+  <TR>
+    <TD>
+    <H3>Troubleshooting chart</H3>
+
+    <H3><HR ALIGN=LEFT></H3>
+
+    <P><A NAME="top"></A></P>
+
+    <P><CENTER><TABLE BORDER="1" WIDTH="80%" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        <P><A HREF="#ts1">1. No Display</A></P>
+
+        <DL>
+          <DD><A HREF="#ts1a">1-A LED (Yellow) Blinks (Protector of microprocessor
+          operates)</A><BR>
+          <A HREF="#1a1">1-A1 Speaker Power NG</A>
+          <DD><A HREF="#1a2">1-A2 5V_M NG</A>
+          <DD><A HREF="#1a3">1-A3 -14V NG</A>
+          <DD><A HREF="#1a4">1-A4 85V NG</A>
+          <DD><A HREF="#1a5">1-A5 180V NG</A>
+          <DD><A HREF="#1a6">1-A6 Horizonta Circuit NG</A>
+          <DD><A HREF="#1a7">1-A7 Vertical Circuit NG</A>
+          <DD><A HREF="#1b">1-B No display (LED does not light)</A><BR>
+          <A HREF="#1c">1-C No display (LED lights but no raster)</A>
+        </DL>
+</TD>
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts2">2. Horizontal Size is not correct</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts3">3. Vertical Size is not correct</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P><A HREF="#ts4">4. Horizontal / Vertical Sync is not correct</A></P>
+
+        <DL>
+          <DD><A HREF="#ts4_1">4-1 Sync is not correct in SYNC ON GREEN
+          input</A>
+          <DD><A HREF="#ts4_2">4-2 Vertical Sync is not correct in Separate
+          Syn input</A>
+          <DD><A HREF="#ts4_3">4-3 Horizontal Sync is not correct in Separate
+          Sync input</A>
+        </DL>
+</TD>
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts5">5. Focus is not correct</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P><A HREF="#ts6">6. Convergence / Purity is not correct</A></P>
+
+        <DL>
+          <DD><A HREF="#ts6_1">6-1 Convergence is not correct</A>
+          <DD><A HREF="#ts6_2">6-2 Purity is not correct</A>
+        </DL>
+</TD>
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts7">7. Horizontal Linearity is not correct&nbsp;</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts8">8. Vertical Liniarity is not correct</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts9">9. White Balance is not correct</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts10">10. Distortion is not correct</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts11">11. Horizontal noise appears</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts12">12. Raster appears but too bright or too dark</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts13">13. Image problem (Overshoot, smear)</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts14">14. PowerManager does not work</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts15">15. AutoSizing funtion does not work</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts16">16. Adjustment buttons does not work</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts17">17. Input Priority function does not work</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts18">18. USB function does not work</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <A HREF="#ts19">19. USB-5V is not output</A></TD> 
+      </TR>
+    </TABLE></CENTER></P>
+
+    <P><HR ALIGN=LEFT></P>
+
+    <P><A NAME="ts1"></A></P>
+
+    <H3>1. No Display</H3>
+
+    <H4><IMG SRC="image/danger.GIF" WIDTH="160" HEIGHT="34" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><TABLE WIDTH="100%" BORDER="1"
+    CELLSPACING="2" CELLPADDING="0">
+       
+      <TR>
+        <TD BGCOLOR="#ffcccc">
+        <P><B><U>When adjusting or servicing the PCB with the power switch
+        ON, securely connect the shield part of the CRT Iintegral implosion
+        protection band) to the GND on the PCB (Secondary Radiator) with
+        leadd before turning the Power switch ON.</U></B></P>
+
+        <P>Otherwise, if the high voltage put into the CRT, it will cause
+        unstability of the external earth. This will result in serious
+        electric shocl or damage.</TD> 
+      </TR>
+    </TABLE></H4>
+
+    <H4>&nbsp;</H4>
+
+    <IMG SRC="image/ts1.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="609"
+    HEIGHT="930" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%">
+        View <A HREF="javascript:OpenWin1()">Wave V1</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="100%">
+        View <A HREF="javascript:OpenWin2()">Wave V2</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="100%">
+        Jump to <A HREF="#ts1a">1-A</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="100%">
+        Jump to <A HREF="#1b">1-B</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="100%">
+        Jump to <A HREF="#1c">1-C</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts1a"></A></P>
+
+    <H4>1-A. LED (Yellow) Blinks (Protector of microprocessor operates)</H4>
+
+    <IMG SRC="image/ts1a.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="553"
+    HEIGHT="347" NATURALSIZEFLAG="3">
+
+    <P>*When there are two or more factors, it becomes the above-mentioned
+    composite.</P>
+
+    <P><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        Jump to <A HREF="#1a1">1-A 1</A></TD> 
+        <TD>
+        Jump to <A HREF="#1a2">1-A 2</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        Jump to <A HREF="#1a3">1-A 3</A></TD> 
+        <TD>
+        Jump to <A HREF="#1a4">1-A 4</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        Jump to <A HREF="#1a5">1-A5</A></TD> 
+        <TD>
+        Jump to <A HREF="#1a6">1-A 6</A></TD> 
+      </TR>
+      <TR>
+        <TD COLSPAN="2">
+        Jump to <A HREF="#1a7">1-A 7</A></TD>
+         
+      </TR>
+    </TABLE></P>
+
+    <P><TABLE WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%" BGCOLOR="#ffcccc">
+        When canceling the protector, short 1 pin and 2 pin of CN354
+        on PCB-VIDEO. (When protector functions are canceled, yellow
+        horizontal lines appear on the OSD display.) And then, short
+        between U951 1pin and GND in order to stop the horizontal output
+        circuit and high voltage circuit . After servicing, restore CN354
+        1, 2 pin and U951 1pin.</TD> 
+      </TR>
+    </TABLE>&nbsp;<IMG SRC="image/ts1aa.gif" WIDTH="496" HEIGHT="382"
+    ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></P>
+
+    <H4 ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></H4>
+
+    <H4><A NAME="1a1"></A></H4>
+
+    <H4>1-A1 Speaker Power NG (Analyze with stopping horizontal output
+    circuit and high voltage circuit)</H4>
+
+    <IMG SRC="image/ts1a1.gif" WIDTH="401" HEIGHT="61" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1a2"></A></P>
+
+    <H4>1-A2 5V_M NG (Analyze with stopping horizontal output circuit
+    and high voltage circuit)</H4>
+
+    <IMG SRC="image/ts1a2.gif" WIDTH="250" HEIGHT="99" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1a3"></A></P>
+
+    <H4>1-A3 -14V NG (Analyze with stopping horizontal output circuit
+    and high voltage circuit)</H4>
+
+    <IMG SRC="image/ts1a3.gif" WIDTH="364" HEIGHT="118" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1a4"></A></P>
+
+    <H4>1-A4 85V NG (Analyze with stopping horizontal output circuit
+    and high voltage circuit)</H4>
+
+    <IMG SRC="image/ts1a4.gif" WIDTH="467" HEIGHT="533" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1a5"></A></P>
+
+    <H4>1-A5 180V NG</H4>
+
+    <P><IMG SRC="image/ts1a5.gif" WIDTH="572" HEIGHT="325" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><BR>
+    <TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin6()">Wave M1</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin18()">Wave M13</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin19()">Wave M14</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="471">
+        Jump to <A HREF="#1a6">1-A6 (Horizonta Circuit NG )</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1a6"></A></P>
+
+    <H4>1-A6 Horizonta Circuit NG</H4>
+
+    <H4><TABLE WIDTH="100%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%" BGCOLOR="#ffcccc">
+        *After the servicing, resotre U951 1pin .</TD> 
+      </TR>
+    </TABLE></H4>
+
+    <P><IMG SRC="image/ts1a6.gif" WIDTH="572" HEIGHT="401" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><BR>
+    <TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="420">
+        View <A HREF="javascript:OpenWin6()">Wave M1</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="420">
+        View <A HREF="javascript:OpenWin7()">Wave M2</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="420">
+        View <A HREF="javascript:OpenWin8()">Wave M3</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="420">
+        View <A HREF="javascript:OpenWin23()">Wave V6</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1a7"></A></P>
+
+    <H4>1-A7 Vertical Circuit NG</H4>
+
+    <P><IMG SRC="image/ts1a7.gif" WIDTH="515" HEIGHT="325" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><BR>
+    <TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin24()">Wave V7</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin9()">Wave M4</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin10()">Wave M5</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin11()">Wave M6</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="471">
+        Jump to <A HREF="#1a3">1-A3 (-14V NG)</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1b"></A></P>
+
+    <H4>1-B. No display (LED does not light)</H4>
+
+    <IMG SRC="image/ts1b.gif" WIDTH="439" HEIGHT="647" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="1c"></A></P>
+
+    <H4>1-C. No display (LED lights but no raster)</H4>
+
+    <P><IMG SRC="image/warninge.gif" WIDTH="160" HEIGHT="36" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><BR>
+    <TABLE BORDER="1" COLS="2" WIDTH="100%" CELLSPACING="2" CELLPADDING="0">
+      <TR BGCOLOR="#FFFFCC">
+        <TD BGCOLOR="#ffb693">
+        <P><B><U>When checking wave on the primary voltage line, use
+        the 2pin power plug of oscilloscope. Do not connect GND on the
+        primary circuit and GND on the secondary circuit (chassis).</U></B></P>
+
+        <P>If not, this may cause electric shock, damage to the circuit
+        or breaker-down.</TD> 
+      </TR>
+    </TABLE></P>
+
+    <P><IMG SRC="image/ts1c.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="364"
+    HEIGHT="250" NATURALSIZEFLAG="3"><BR>
+    </P>
+
+    <P><TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%">
+        Jump to <A HREF="#ts12">12 (Raster appears but too bright/dark)</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts2"></A></P>
+
+    <H3>2. Horizontal Size is not corret</H3>
+
+    <IMG SRC="image/ts2.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="477"
+    HEIGHT="272" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%">
+        Jump to <A HREF="#ts7">7 (H.Linearty is not correct)</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts3"></A></P>
+
+    <H3>3. Vertical Size is not correct</H3>
+
+    <IMG SRC="image/ts3.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="515"
+    HEIGHT="253" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%">
+        Jump to<A HREF="#ts8"> 8 (V.Linearity is not correct)</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts4"></A></P>
+
+    <H3>4. Horizontal/Vertical Sync is not correct</H3>
+
+    <P><A NAME="ts4_1"></A></P>
+
+    <H4>4-1 Sync is not correct in SYNC ON GREEN input</H4>
+
+    <IMG SRC="image/ts4a.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="422"
+    HEIGHT="193" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="471">
+        View <A HREF="javascript:OpenWin5()">Wave V5</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P><A NAME="ts4_2"></A></P>
+
+    <H4>4-2 Vertical Sync is not correct in Separate Syn input</H4>
+
+    <IMG SRC="image/ts4b.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="516"
+    HEIGHT="212" NATURALSIZEFLAG="3">
+
+    <P><A NAME="ts4_3"></A></P>
+
+    <H4>4-3 Horizontal Sync is not correct in Separate Sync input</H4>
+
+    <IMG SRC="image/ts4c.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="534"
+    HEIGHT="439" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts5"></A></P>
+
+    <H3>5. Focus is not correct</H3>
+
+    <IMG SRC="image/ts5.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="534"
+    HEIGHT="401" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        View <A HREF="javascript:OpenWin13()">Wave M8</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        View <A HREF="javascript:OpenWin14()">Wave M9</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        View <A HREF="javascript:OpenWin15()">Wave M10</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        View <A HREF="javascript:OpenWin16()">Wave M11</A></TD> 
+      </TR>
+      <TR>
+        <TD>
+        View <A HREF="javascript:OpenWin17()">Wave M12</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts6"></A></P>
+
+    <H3>6. Convergence / Purity is not correct</H3>
+
+    <P><A NAME="ts6_1"></A></P>
+
+    <H4>6-1 Convergence</H4>
+
+    <IMG SRC="image/ts6a.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="383"
+    HEIGHT="215" NATURALSIZEFLAG="3">
+
+    <P><A NAME="ts6_2"></A></P>
+
+    <H4>6-2 Purity</H4>
+
+    <IMG SRC="image/ts6b.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="572"
+    HEIGHT="269" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts7"></A></P>
+
+    <H3>7. Horizontal Linearity is not correct</H3>
+
+    <IMG SRC="image/ts7.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="477"
+    HEIGHT="215" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        View <A HREF="javascript:OpenWin22()">Wave L1</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts8"></A></P>
+
+    <H3>8. Vertical Liniarity is not correct</H3>
+
+    <P><IMG SRC="image/ts8.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="534"
+    HEIGHT="288" NATURALSIZEFLAG="3"><BR>
+    <TABLE WIDTH="75%" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="443">
+        View <A HREF="javascript:OpenWin9()">Wave M4</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="443">
+        View <A HREF="javascript:OpenWin12()">Wave M7</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <H4><A NAME="ts9"></A></H4>
+
+    <H3>9. White Balance is not correct</H3>
+
+    <IMG SRC="image/ts9.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="401"
+    HEIGHT="212" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%">
+        Jump to <A HREF="#ts12">12 (Raster appears but too bright or
+        too dark)</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <H4><A NAME="ts10"></A></H4>
+
+    <H3>10. Distortion is not correct</H3>
+
+    <IMG SRC="image/ts10.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="534"
+    HEIGHT="477" NATURALSIZEFLAG="3">
+
+    <P><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="443">
+        View <A HREF="javascript:OpenWin20()">Wave M15</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="443">
+        View <A HREF="javascript:OpenWin21()">Wave M16</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts11"></A></P>
+
+    <H3>11. Horizontal noise appears</H3>
+
+    <IMG SRC="image/ts11.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="590"
+    HEIGHT="552" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts12"></A></P>
+
+    <H3>12. Raster appears but too bright or too dark</H3>
+
+    <P><IMG SRC="image/warninge.gif" WIDTH="160" HEIGHT="36" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><BR>
+    <TABLE BORDER="1" COLS="2" WIDTH="100%" CELLSPACING="2" CELLPADDING="0">
+      <TR BGCOLOR="#FFFFCC">
+        <TD BGCOLOR="#ffb693">
+        <B><U><IMG SRC="image/prohibit.gif" WIDTH="45" HEIGHT="45" ALIGN="BOTTOM"
+        BORDER="0" NATURALSIZEFLAG="3"></U></B>
+</TD>
+        <TD BGCOLOR="#ffb693">
+        <B>Do not check wave on the primary and secondary voltage line
+        with same oscilloscope at same time. If necessary, connect the
+        Isolation Trans for the power of monitor.<BR>
+        This may cause an Electric shock or damage to the circuit.</B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <IMG SRC="image/ts12.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="534"
+    HEIGHT="457" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts13"></A></P>
+
+    <H3>13. Image problem (Overshoot, smear)</H3>
+
+    <P><IMG SRC="image/ts13.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="364"
+    HEIGHT="457" NATURALSIZEFLAG="3"><BR>
+    <TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="443">
+        View <A HREF="javascript:OpenWin2()">Wave V2</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="443">
+        View <A HREF="javascript:OpenWin3()">Wave V3</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="443">
+        View <A HREF="javascript:OpenWin4()">Wave V4</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts14"></A></P>
+
+    <H3>14. PowerManager does not work.</H3>
+
+    <IMG SRC="image/ts14.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="383"
+    HEIGHT="155" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts15"></A></P>
+
+    <H3>15. AutoSizing function does not work</H3>
+
+    <P><IMG SRC="image/ts15.gif" ALIGN="BOTTOM" BORDER="0" WIDTH="383"
+    HEIGHT="269" NATURALSIZEFLAG="3"><BR>
+    <TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="443">
+        Jump to <A HREF="#ts7">7 (Horizontal Linearity is not correct)</A></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="443">
+        Jump to <A HREF="#ts8">8 (Vertical Liniarity is not correct)</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts16"></A></P>
+
+    <H3>16. Adjustment button does not work</H3>
+
+    <IMG SRC="image/ts16.gif" WIDTH="383" HEIGHT="193" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts17"></A></P>
+
+    <H3>17. Input Priority function does not work</H3>
+
+    <IMG SRC="image/ts17.gif" WIDTH="477" HEIGHT="157" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts18"></A></P>
+
+    <H3>18. USB function does not work</H3>
+
+    <P><IMG SRC="image/cautione.gif" WIDTH="160" HEIGHT="34" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><BR>
+    <TABLE BORDER="1" COLS="2" WIDTH="100%" CELLSPACING="2" CELLPADDING="0">
+      <TR BGCOLOR="#FFFFCC">
+        <TD BGCOLOR="#ffffcc">
+        <B><U><IMG SRC="image/gnl_caut.GIF" WIDTH="49" HEIGHT="42" ALIGN="BOTTOM"
+        BORDER="0" NATURALSIZEFLAG="3"></U></B>
+</TD>
+        <TD BGCOLOR="#ffffcc">
+        <B>Check the PCB-USB without connection the device to the Up
+        Stream.</B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P><IMG SRC="image/ts18.gif" WIDTH="534" HEIGHT="325" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3"><BR>
+    <TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%">
+        Jump to <A HREF="#ts19">19 (USB-5V is not output)</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></P>
+
+    <P><A NAME="ts19"></A></P>
+
+    <H3>19. USB-5V is not output</H3>
+
+    <IMG SRC="image/ts19.gif" WIDTH="383" HEIGHT="193" ALIGN="BOTTOM"
+    BORDER="0" NATURALSIZEFLAG="3">
+
+    <P ALIGN=RIGHT><A HREF="#top"><IMG SRC="image/return.jpg" WIDTH="200"
+    HEIGHT="77" ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3"></A></TD> 
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>

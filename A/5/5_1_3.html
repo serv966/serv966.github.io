@@ -1,0 +1,373 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <META NAME="Author" CONTENT="Reiko Arise">
+  <TITLE>Service Manual T966</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" 
+WIDTH="550">
+  <TR>
+    <TD>
+    <H3>Circuit Description (PCB-MAIN)</H3>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="80%">
+      <TR>
+        <TD BGCOLOR="#ffffc1">
+        <B><A HREF="5_1_1.html">Deflection Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffc1c1">
+        <B><A HREF="5_1_2.html">High Voltage Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffccff">
+        <B>Power Block</B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <H4><HR ALIGN=LEFT><BR>
+    <TABLE WIDTH="100%" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        <H4>Power Block</H4>
+</TD>
+        <TD>
+        <P ALIGN=RIGHT><A HREF="../6/diagram/schmain2.pdf" TARGET="_blank">SCHEMATIC
+        DIAGRAM for PWR-BLK</A></TD> 
+      </TR>
+    </TABLE></H4>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="100%">
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>EMI Filter circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        EMI Filter circuit has INLET-FILTER (IN001), NORMAL CHOKE (L005),
+        LINE FILTER (L001, L002), BEADS (L003), X-CAPACITOR (C001) and
+        Y-CAPACITOR (C090~C099) in order to meet the EMI/EMC regulation.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Degauss Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        At the degauss circuit, the damped oscillation current is made
+        by running the input AC current through degaussing posistor.
+        Then the CRT is degaussed by running this current to the degauss
+        coil. The Degauss circuit works by receiving the control signal
+        &lt;ON (Hi: 5 V)/OFF (Lo: 0 V)&gt; signal from the microprocessor.
+        When the ON signal comes in from the microprocessor, the small-signal
+        MOS-FET (Q971) turns ON and the relay (RY001) works. The RY001
+        flows the degauss current in the degauss coil.<BR>
+        The signal from the microprocessor turns ON for 4 seconds (Hi:
+        5V) after degaussing. After then, it keeps OFF (Lo: 0V) for 20
+        seconds in order to cool the degaussing posistor.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Inrush Current Prevention Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The input smoothing capacitor (C010, C071) are charged when the
+        power is on. These currents are called inrush current.<BR>
+        Because this excess inrush current may cause the circuit parts
+        damge such as the welding of the contact point of the power SW
+        and the fusion of the fuse, the inrush current prevention circuit
+        is built in. <BR>
+        Firstly, the current flows into the C010 and C071 through the
+        inruch current prevention resistor thermistor (TH001). At this
+        time, the over-current cannot flow because the TH001 limits the
+        current. The power circuit starts operating and then with a time
+        lag the RY002 is ON. The current supplied through the TH001 comes
+        to flow through the RY002.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Sub-converter Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P>The sub-converter circuit has 6.3V of single output flyback
+        converter, with insulated its primary and secondary line by the
+        TRANS (T003). <BR>
+        At PowerSave mode , it works with the fixed oscillated frequency.
+        At normal mode, it works with synchronizing to the sync. signal
+        2FH. The 6.3V voltage is used in the microprocessor, DSP block,
+        the heater and USB block.</P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            <B><I>The principle of the operation</I></B></TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            If the power SW turns ON, the Q031 turns ON. Then the operation
+            current runs to the Vcc terminal (7pin) of the control IC: U071
+            for the sub-converter through the operation resistance R035~R037.
+            Then the sub-converter starts working. Then, the Q031 turns OFF
+            and the operation circuit stops. The tertiary winding output
+            of T003 is changed to DC15V through the IC-REGULATOR and supplied
+            to the Vcc of the U071.<BR>
+            The circuit charges the transformer (T003) with energy during
+            the switch element (Q072) is on. And the circuit transfer the
+            energy to the T003 secondary line from primary line and supplies
+            the rectified and smoothed voltage through each output rectification
+            diode (D907) and smoothing electrolytic capacitors (C911, C916)
+            when the switch element is off. <BR>
+            This control varies ON duty of the switch element (PWM-Pulse
+            Width Modulation) through the control IC (U071) in order to keep
+            the output voltage (6.3V). <BR>
+            The output voltage is detected by the R908 and R909. It is input
+            to the SHUNT-REGULATOR (U901: Reference voltage) and the FEED-BACK
+            output is transmitted to the primary line by the photo coupler
+            (PC003) and fed back to the control IC (U071 1 pin). The control
+            IC works to keep the voltage feed back constant.</TD> 
+          </TR>
+        </TABLE></CENTER></TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Main-converter Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P>The main-converter circuit has many output flyback the dummy
+        resonant converter, isolated its primary and secondary line with
+        the TRANS (T001).</P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            <B><I>The principle of the operation</I></B></TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            After the sub-converter is operated, the main-converter circuit
+            receives the control signal (AP) from the microprocessor to start
+            operating.<BR>
+            When the AP becomes high (5V), the Q902 is ON to flow the current
+            in the photo coupler (PC004) and to transmit the high signal
+            from the secondary line to the primary line. The signal turns
+            the Q932 ON. The tertiary winding output 15V of the sub-converter
+            is supplied to the Vcc terminal (4pin) of the control IC (U001)
+            of the main-converter. Then the circuit operates. The IC has
+            a main switching element and a sub switching element for the
+            dummy resonant.<BR>
+            When the main switching element is on, the circuit charges energy
+            in the transformer T001. And when the main switching element
+            is off, the circuit release the energy to the secondary line
+            of the transformer T001 and outputs rectified and smoothed voltage
+            through rectification diode and smoothing electrolytic capacitor.
+            The principle of the operation is same as before.<BR>
+            The output voltage control varies ON duty of the main switching
+            element through the control IC (U001) in order to keep the output
+            voltage of the 85V line.<BR>
+            The output voltage is detected by the R984, R985 and VR981. It
+            is input to the SHUNT-REGULATOR (U981:IC for the reference voltage)
+            The FEED-BACK output is transmitted to the primary line by the
+            photo coupler (PC001) and fed back to the control IC (U001 7pin).
+            The control IC works to keep the voltage fed back constant. The
+            switching frequency synchronizes with 2fH.<BR>
+            At PowerSave Mode, the control signal AP from the microprocessor
+            turns low level to stop operating the main-converter circuit.</TD> 
+          </TR>
+        </TABLE></CENTER></P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            <B><I>Function of a Sub-Switching element<BR>
+            (Dummy Resonant Operation)</I></B></TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            The sub switching element does the dummy resonant operation so
+            that the main switching element can start in 0V in order to reduce
+            the switching loss of the main switching element. The sub switching
+            element turns ON 250nS earlier than the main switching element
+            does to let the drain voltage of the main switching element resonate
+            by the resonant capacitor (C021), the main transformer (T001)
+            and the choking coil (L012). The dummy resonant operation starts
+            when the main switching element turns 0V. Thus this function
+            reduces the loss of the main switching element. In addition,
+            although the main switching element is OFF, the main switching
+            OFF wave stands up smoothly because the C021 is inserted to reduce
+            the switching loss.</TD> 
+          </TR>
+        </TABLE></CENTER></P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            Countermeasure for higher harmonic distorted current</TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            A countermeasure for higher harmonic distorted current is taken
+            in the circuit consisted of PFC coil of maintrans (T001), D001-D013,
+            D002-D003, C007, C008, and&nbsp;L004.<BR>
+            When the control IC(U001) is on and drain current of the main
+            switching element runs in the Np coil, similar voltage to the
+            drain voltage is produced in PFC coil.<BR>
+            This makes conduction angle (Charging current running term in
+            capacitor) of C010, condenser of unstriated input, wider and
+            improves its power factor.<BR>
+            As a result, the voltage between terminals of C010 becomes 10
+            to 20V higher than that in the capacitor and the input smoothing
+            circuit. In addition, when the main switch is on, the similar
+            current to drain current runs to PFC coil (L011). Then, the energy
+            charged in L011 becomes swing back current when main switch is
+            off and charges C010 through C013, C014, D004 and D005.<BR>
+            As a result, the conduction angle of C010 becomes wider and the
+            power factor improves.&nbsp;</TD> 
+          </TR>
+        </TABLE></CENTER></TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Sync Signal Transmit Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The sync signal is transmitted from the main block to the oscillation
+        frequency of the power circuit with the operation frequency of
+        the main block. When an input signal (fH) is higher than 63kHz,
+        transmitted is the sync signal of the frequency which is the
+        same as the input signal (fH). When the input signal (fH) is
+        lower than 63kHz, transmitted is the sync signal of the frequency
+        which is twice as high as the input signal.<BR>
+        The sync signal sent from the PCB-MAIN is used for the wave to
+        drive Q941.<BR>
+        The Q941 drives the transformer (T002) for sync signal transmission
+        to transmit the sync signal from the secondary line to the primary.
+<BR>
+        It is input to each control IC in the sub power circuit (U071)
+        and the main-converter circuit (U001).</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>DC-DC Converter Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The DC-DC converter has the output voltage variable flyback converter
+        of TRANS (T951). This circuit receives the ERR (FEED-BACK voltage)
+        and generates the +B voltage for the horizontal deflective circuit
+        from the 85V line voltage of the main-converter.<BR>
+        The circuit charges the transformer (T951) with energy during
+        the switch element (Q951) is on. And the circuit transfers the
+        energy to the T951 secondary line from primary line and supplies
+        the rectified and smoothed voltage through each output rectification
+        diode and smoothing electrolytic capacitor when the switch element
+        is off. <BR>
+        This control varies ON duty of the switch element (PWM) through
+        the control IC (U951) so that the output voltage corresponds
+        with ERR (FEED-BACK voltage) .<BR>
+        The output voltage is controlled by inputting the FEED-BACK voltage
+        from the horizontal output circuit to the control IC (U951 2
+        pin). <BR>
+        The switching frequency is synchronizes with fH (horizontal oscillated
+        frequency) by the sync. signal FBP.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        &nbsp;<B>Protector relations</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P><CENTER>&nbsp;<TABLE WIDTH="450" BORDER="1" CELLSPACING="2"
+        CELLPADDING="0">
+           
+          <TR>
+            <TD WIDTH="100%">
+            U001 excess voltage protector</TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            When Vcc of U001, the voltage between end terminals of C022,
+            surpasses 22V(TYP.),U001 stops its operation by protector.</TD> 
+          </TR>
+        </TABLE></CENTER></P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            U001 excess current protector</TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            U001 stops its operation by protector when the voltage between
+            end terminals of U001 current detector resistance is 0.88V(TYP.)
+            for more than 1 seconds and stops its operation immediately when
+            the voltage becomes over 1.5 V(TYP.).</TD> 
+          </TR>
+        </TABLE></CENTER></P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            U001 thermal protector</TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            When U001 internal temperature reaches 125&deg;C to 150&deg;C,
+            the protector works and stops the operation.&nbsp;</TD> 
+          </TR>
+        </TABLE></CENTER></P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            Variable +B output excess voltage protector</TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            This is a circuit which detects excess voltage of variable +B
+            output (voltage at both ends of C961).<BR>
+            When the voltage divided by R971-R974 resistance exceeds Zener
+            voltage 6.2, the thyristor circuit which consists of Q953 and
+            Q954 turns on and connects 1pin of control IC (U951) to GND and
+            stops the operation.<BR>
+            Then microcomputer protector, which detects horizontal output
+            shutoff, operates and the product shifts to power saving mode.<BR>
+            The protector operates when C961 both edge voltage reaches around
+            200V.&nbsp;&nbsp;</TD> 
+          </TR>
+        </TABLE></CENTER></P>
+
+        <P><CENTER><TABLE WIDTH="450" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+          <TR>
+            <TD WIDTH="100%">
+            85V output excess voltage protector</TD> 
+          </TR>
+          <TR>
+            <TD WIDTH="100%">
+            This is a circuit which detects excess voltage of 85V line output.<BR>
+            When the divided voltage by R912-R914 resistance surpasses ZD902's
+            Zener voltage 6.2V, the thyristor circuit which consists of Q903
+            and Q904 turns on and the anode side of photo coupler is connected
+            to GND and Q043 turns off.<BR>
+            As a result, the voltage supply to U001 is cut off and U001 stops
+            its operation.<BR>
+            Then, the output of the main converter is cut off and the microcomputer
+            protector, which detects 85V, +14V and -14V, operates and the
+            product shifts to power saving mode.<BR>
+            The protector operates when C961 both edge voltage reaches around
+            100V.&nbsp;&nbsp;</TD> 
+          </TR>
+        </TABLE></CENTER></TD>
+      </TR>
+    </TABLE></TD>
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>

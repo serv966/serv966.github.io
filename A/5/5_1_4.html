@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <META NAME="Author" CONTENT="Reiko Arise">
+  <TITLE>Service Manual T966</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" 
+WIDTH="550">
+  <TR>
+    <TD>
+    <H3>Circuit Description (PCB-VIDEO)</H3>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="80%">
+      <TR>
+        <TD BGCOLOR="#ffffc1">
+        <B>Video Block</B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffc1c1">
+        <B><A HREF="5_1_5.html">Deflection Control Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffccff">
+        <B><A HREF="5_1_6.html">USB Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#d0d0ff">
+        <B><A HREF="5_1_7.html">Microprocessor</A></B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <H4><HR ALIGN=LEFT><BR>
+    <TABLE WIDTH="100%" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        <B>Video Block</B></TD> 
+        <TD>
+        <P ALIGN=RIGHT><A HREF="../6/diagram/schvide1.pdf" TARGET="_blank">SCHEMATIC
+        DIAGRAM for VIDEO BLK</A></TD> 
+      </TR>
+    </TABLE></H4>
+
+    <P>The signal coming from the D-sub and/or BNC is input to the
+    Analog switch IC (U201). The selected video signal (D-SUB or
+    BNC) is output to the video-Pre-Amplifier (U202) from U201. Then,
+    the GAIN of R, G and B signals from the U201 are controlled by
+    U202 and these signals are mixed with the OSD signal . The R,
+    G and B signals are amplified by the video output amplifier (U203).
+    Then the cutoff level control IC (U204) controls the cutoff level
+    of R, G and B signals output from the U203, and controls the
+    black level of the R, G and B signals from U203.</P>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="100%">
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Input Select (U201)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The U201 builds in the input signal switching circuit, the sync
+        separator circuit. <BR>
+        The selected input signal by U201 is displayed on screen. The
+        selected control signal (D/B) is input to the 18pin through the
+        measure gate array (U351).<BR>
+        The sync separator circuit built in outputs G on Sync signal
+        at D-Sub input to the measure gate array as the composite signal
+        at TTL level.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Video Pre Amplifier (U202)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The U202 controls the R, G and B gain signals coming from the
+        input select IC (U201), and mixes the video signal and the OSD
+        signal. The microprocessor (U351) controls these operations of
+        the U202 through the I<SUP>2</SUP>C bus. And the U202 has the
+        following built-in functions; the Sync Separator Circuit, the
+        video blanking, clamp, D/A converter functions, Video signal
+        detection circuit, Sharpness and Gamma functions. The G, R and
+        B signals coming from the U205 are input to the OSD G, OSD R,
+        OSD B of the U202. And the BLK of the U205 is input to the 1pin
+        of OSD BLK to make the display period of the video signal blank.<BR>
+        The signal controlled in Gain is output from R OUT, G OUT and
+        B OUT.<BR>
+        The Sync Separator circuit outputs the G on Sync signal at BNC
+        input to the measure gate array as the composite signal at TTL
+        level. The clamp pulse is input to 21pin (CP) and the video blanking
+        pulse is input to 30pin (BLK). The D/A converter is used for
+        the ABL and Signal Filter adjustment.<BR>
+        As the Auto Sizing function, this IC detects the video signal
+        of each color to output the display period of the video signal
+        to the measure gate array from 17 pin (DISP).</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>OSD (U205)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The IC is controlled by microprocessor (U351) through the three
+        lined serial bus. The IC uses the OSD_H and OSD_V output from
+        measure gate array as the sync signal. The displayed OSD signal
+        which is output from R, G, B is mixed with the video signal by
+        the U202.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Video Output Amplifier (U203)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The video signal output from the U202 is input to 2, 8, and 12pin.
+        The video signals are amplified and each signal is output from
+        4, 6, 14 pin. This amplified signal drives the CRT cathode. The
+        Signal Filter 1/2 function can reduce video card's smear or ghost
+        by switching emitter peaking constant of U203.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Cut Off Control (U204, U208)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The cut off level of video signals is controlled in the cut off
+        circuit (U204). The cut off level is controlled by changing by
+        the DC level of the video signals that are output from U203 in
+        the U204 output of IROUT, AIGOUT, AIBOUT. The amount of change
+        is controlled by PWM output of measure-gate allay.</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>DDC (U101)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The U101 has the information for product ID, serial No or corresponded
+        frequency. The information is read when the minter is connected
+        to the DDC computer. This IC corresponds to the DDC2B. SDA connects
+        with the 12pin of D-Sub connector, SCL with 15 pin.<BR>
+        The power supply of the U101 is generated from the input sync
+        signal and 5V_S.</TD> 
+      </TR>
+    </TABLE></TD>
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <META NAME="Author" CONTENT="Reiko Arise">
+  <TITLE>Service Manual T966</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" 
+WIDTH="550">
+  <TR>
+    <TD>
+    <H3>Circuit Description (PCB-VIDEO)</H3>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="80%">
+      <TR>
+        <TD BGCOLOR="#ffffc1">
+        <B><A HREF="5_1_4.html">Video Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffc1c1">
+        <B>Deflection Control Block</B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffccff">
+        <B><A HREF="5_1_6.html">USB Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#d0d0ff">
+        <B><A HREF="5_1_7.html">Microprocessor</A></B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <H4><HR ALIGN=LEFT><BR>
+    <TABLE WIDTH="100%" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        <B>Deflection Control Block</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P ALIGN=RIGHT><A HREF="../6/diagram/schvide3.pdf" TARGET="_blank">SCHEMATIC
+        DIAGRAM for DSP BLK</A></TD> 
+      </TR>
+    </TABLE></H4>
+
+    <P>The Deflection Control Block has DSP LSI (U601) as the core,
+    audio D/A converter (U605, U606) and the horizontal oscillator
+    IC (U602). It generates horizontal and vertical drive wave and
+    the distortion correction wave.</P>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="100%">
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Horizontal Oscillate Circuit (U602)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The U602 outputs the H.DRV pulse from 15 pin from the input sync
+        signals of 30pin and horizontal drive circuit operates. The H.FBP
+        generated in the horizontal output circuit is input to the 8
+        pin and used to lock the sync. <BR>
+        The DAC (U603) outputs the 29pin voltage for the horizontal position
+        control and the 27 pin voltage for the oscillation frequency
+        control.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Vertical Oscillate Circuit</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The U606 (1 pin) outputs the vertical drive wave the DSP LSI
+        operated in the vertical size (amplitude), the vertical position
+        (the DC level) and the vertical linearity.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Horizontal Size Correction Wave</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The horizontal size correction wave has four functions; Side-pin,
+        Side-pin corner (Top/Bottom), Side-pin S and Side-pin W. The
+        U606 (4 pin) outputs the horizontal size correction wave the
+        DSP LSI operated and mixed in these functions. The U607 amplifies
+        the wave coming from the U606 to output to the deflection circuit.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Horizontal Phase Correction Wave</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The horizontal phase correction wave has the parallelogram, side-pin
+        balance and balance corner (Top/Bottom) functions. The U605 (1
+        pin) outputs the horizontal phase correction wave the DSP LSI
+        operated and mixed in these functions. This output wave is input
+        to the horizontal position control terminal (29 pin) in the horizontal
+        oscillation circuit (U602).</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Vertical Convergence Wave</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        The U605 (4 pin) outputs the vertical convergence wave generated
+        by the DSP operation. The U608 amplifies this wave to output
+        as V.CONV.</TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>General Output Ports</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P>The DSP LSI (U601) output ports are used as follows;</P>
+
+        <UL>
+          <LI>Signal switch (U601, 1pin) of power sync.
+          <LI>Freerun control signal (U601, 4pin) of oscillation IC (U602).
+        </UL>
+</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Synchronization pulse of power frequency</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        Pulse (2fH) used for the synchronization pulse of the power supply
+        frequency is generated based on the pulse output from 41pin of
+        DSP LSI.When the horizontal operating frequency is less than
+        63kHz, the pulse of 2fH synchronization pulse becomes twice as
+        horizontal operating frequency. This switching is done by control
+        signal (U601 1pin).</TD> 
+      </TR>
+    </TABLE></TD>
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>

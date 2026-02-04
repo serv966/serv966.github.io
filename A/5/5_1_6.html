@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <META NAME="Author" CONTENT="Reiko Arise">
+  <TITLE>Service Manual T965 (A01-A)</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" 
+WIDTH="550">
+  <TR>
+    <TD>
+    <H3>Circuit Description (PCB-VIDEO)</H3>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="80%">
+      <TR>
+        <TD BGCOLOR="#ffffc1">
+        <B><A HREF="5_1_4.html">Video Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffc1c1">
+        <B><A HREF="5_1_5.html">Deflection Control Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffccff">
+        <B>USB Block</B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#d0d0ff">
+        <B><A HREF="5_1_7.html">Microprocessor</A></B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P><HR ALIGN=LEFT><BR>
+    <TABLE WIDTH="100%" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        <B>USB Block</B></TD> 
+        <TD>
+        <P ALIGN=RIGHT><A HREF="../6/diagram/schvide2.pdf" TARGET="_blank">SCHEMATIC
+        DIAGRAM for USB-BLK</A></TD> 
+      </TR>
+    </TABLE></P>
+
+    <P>The hub controlled complies with the 1 up stream and 4 down
+    stream. Up to 4 USB corresponded peripherals can be connected.
+    It judges the communication speed (full-speed or low-speed) automatically
+    and corresponds both. The power supply is 5V. The U852 supplies
+    the operation clock (6MHz) to 19pin. The monitor controller (U852)
+    is used for the monitor adjustment. It operates at 3.3V of the
+    power supply and at 12MHz of the operation clock. It is controlled
+    through the I<SUP>2</SUP>C bus by the microprocessor. <BR>
+    The CN855 is the up stream connector. The differential data signal
+    with the host are input to 1 pin and power supply from the host
+    (5V) is input to the 1 pin. The microprocessor (U351) monitors
+    the voltage (USB_DET) and detects the connection to the up stream.
+<BR>
+    The data signal from the host is input to 28 and 29 pin of U851.
+<BR>
+    The CN852~CN854 and CN856 are down stream connector. The power
+    (5V_U_OUT) is supplied to down stream from the 1 pin of the each
+    connectors. As well as the up stream, 2 and 3 pin is the data
+    signal and connected to U851.<BR>
+    When the over-current control IC (U853) detects the over-current,
+    it makes each connector stop supplying the power to each downstream.</TD> 
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>

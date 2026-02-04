@@ -1,0 +1,244 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <TITLE>Service Manual T966</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" CELLSPACING="0" CELLPADDING="0" 
+WIDTH="550">
+  <TR>
+    <TD>
+    <H3>Circuit Description (PCB-VIDEO)</H3>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="80%">
+      <TR>
+        <TD BGCOLOR="#ffffc1">
+        <B><A HREF="5_1_4.html">Video Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffc1c1">
+        <B><A HREF="5_1_5.html">Deflection Control Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffccff">
+        <B><A HREF="5_1_6.html">USB Block</A></B></TD> 
+      </TR>
+      <TR>
+        <TD BGCOLOR="#d0d0ff">
+        <B>Microprocessor</B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <H4><TABLE WIDTH="100%" BORDER="0" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD>
+        <B>Microprocessor</B></TD> 
+        <TD>
+        <P ALIGN=RIGHT><A HREF="../6/diagram/schvide1.pdf" TARGET="_blank">SCHEMATIC
+        DIAGRAM for VIDEO-BLK</A></TD> 
+      </TR>
+    </TABLE></H4>
+
+    <P><TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="100%">
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Microprocessor (U351)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P>The major functions of the microprocessor is to detect the
+        front SW operation, to control each device, to control the OSD,
+        to switch the frequency, to readout and restore the monitor adjustment
+        data and to control the PowerSave. The microprocessor is always
+        active while the monitor is powered on.</P>
+
+        <OL>
+          <LI><B>SW Control</B><BR>
+          The Key-Scan method is adopted at the switch control. The microprocessor
+          detects what control SW is operated, with measuring the voltage
+          on 95 pin (KY1). <BR>
+          The microprocessor also controls the front LED on/off at the
+          4 pin (green) and 5 pin (yellow).<BR>
+          <FONT COLOR="#ffffff">-</FONT>
+          <LI><B>Data transmission</B><BR>
+          The devices controlled by the microprocessor are EEPROM(U353),
+          measure gate array(U352) , OSD(U205), Video pre amplifier (U202)
+          DSP LSI(U601) and D/A converter (U551, U603, U570). <BR>
+          These devices except measure gate array(U352) , OSD(U205) use
+          I<SUP>2</SUP>C bus and transfer the data through SCL (29 pin)
+          and SDA (30 pin). <BR>
+          The measure gate array transmits data through the three-wire
+          serial bus (DI: 77 pin, CK: 75 pin and CE: 76 pin). The OSD (U205)
+          transmits data through the three-wire serial bus (DI: 31 pin,
+          CK: 33 pin and OSD_CE: 84 pin). <BR>
+          <FONT COLOR="#ffffff">-</FONT>
+          <LI><B>AP1, AP2, PS</B><BR>
+          AP1 (72 pin), AP2 (71 pin) and PS(5 pin) output from the microprocessor.
+          control the power circuit.<BR>
+          <FONT COLOR="#ffffff">-</FONT>
+          <LI><B>Self-protecting function<BR>
+          </B>The microprocessor monitors whether or not the monitor's
+          internal circuit works properly. <BR>
+          The output lines that the microprocessor monitors are:<BR>
+          * 170 V line<BR>
+          * 80 V line<BR>
+          * -14 V line<BR>
+          * 5V_M line<BR>
+          * Each Output voltage of speaker<BR>
+          *Horizontal and Vertical oscillation line output by the H. BLK
+          and VP_DET<BR>
+          *X.pro voltage<BR>
+          When any of these line stops outputting, the microprocessor finds
+          any trouble that has occurred and stops the voltage except the
+          5V_S. The microprocessor leads the monitor's operation to the
+          Power Save mode 2 to protect the monitor from further damage.
+          Then, the microprocessor notifies the user of the trouble by
+          flashing the front Yellow / Green LED. In addition, LED at the
+          abnormalities operate by lighting with 8 cycle of the number
+          of surveillance. Green blinking tells the unusual factor. This
+          is useful when finding the defected part. <BR>
+          To cancel the protector function, short between PC (9 pin) and
+          GND (10 pin).<BR>
+          <TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="400">
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              LED blinking order</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              Error location</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              1</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              Speaker voltage</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              2</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              5V_M</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              3</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              -14V</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              4</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              85V</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              5</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              180V</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              6</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              Horizontal (HFBP)</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              7</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              Vertical (VPDET)</TD> 
+            </TR>
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              8</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              Xpro voltage</TD> 
+            </TR>
+          </TABLE><BR>
+          <TABLE BORDER="1" CELLSPACING="2" CELLPADDING="0" WIDTH="400">
+            <TR>
+              <TD WIDTH="40%" ALIGN="CENTER">
+              Yellow blinking fast</TD> 
+              <TD WIDTH="60%" ALIGN="CENTER">
+              WatchDog (Software protection)</TD> 
+            </TR>
+          </TABLE><BR>
+          When protector functions are canceled, yellow horizontal lines
+          appear on the OSD display. Red horizontal lines appear when the
+          X-ray protector has not been adjusted. Also, a completely white
+          screen is displayed in a no-signal state in the factory adjustment
+          mode.
+        </OL>
+</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>Measure gate array functions (U352)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P>The major functions of gate array are to measure the frequency
+        of the input signal, Moir&eacute; canceling, to measure the input
+        signal when Auto-Size is performed and PWM output.</P>
+
+        <OL>
+          <LI><B>Measurement of the input signal frequency</B><BR>
+          The gate array always measures the frequency of sync signal input
+          both BNC and D-SUB. The measurement is sent to the microprocessor
+          as data. The microprocessor reads the power saving information
+          such as the existence of the input sync signal as the data.<BR>
+          When Auto-Sizing is performed, the gate array measures the Display
+          period and Back Porch of the input signal. And at the same time
+          , it displays an image on the screen with proper size and position
+          by measuring the H_BLK and VP DET. To decide the proper size,
+          the gate array measures the Sync and R, G and B video of the
+          input signal. From this measurement, the microprocessor calculates
+          the Total period and Display period. Then, to decide the proper
+          size, the microprocessor uses the data in a ratio of the Display
+          period to the Total period. To decide the proper position, the
+          gate array measures the wave which follows the H_BLK and VP DET.<BR>
+          <FONT COLOR="#ffffff">-</FONT>
+          <LI><B>Control Signal</B><BR>
+          The U352 outputs the PWM to control the correction of Brightness,
+          Cutoff, Moir&eacute; Cancel and the warm-up drift of the brightness.
+        </OL>
+</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#ffffcc">
+        <B>EEPROM (U353)</B></TD> 
+      </TR>
+      <TR>
+        <TD>
+        <P>The factory default data, user adjusted data and setting data
+        for the microprocessor are stored within the U353. This data
+        can be readout and restored with special utility software such
+        as eep.exe. If you exchange the EEPROM, all of the adjusted data
+        will be lost. So you need to save the adjusted data in the ROM
+        to file before you exchange the EEPROM, or you need to readjust
+        and store all of the adjustments after you have exchanged EEPROM.</P>
+
+        <P>When you exchange the EEPROM to a new one and turn on the
+        Power SW for the first time, no power phenomenon will occur for
+        approximately 6 sec. This is because the microprocessor formats
+        the EEPROM, so the phenomenon does not indicate the monitor's
+        trouble.</P>
+
+        <P>The major data stored in the EEPROM is:</P>
+
+        <BLOCKQUOTE>
+          <P>adjusted data such as size, position, distortion, color and
+          so on<BR>
+          data for the Auto-Size<BR>
+          switch setting of the CS-capacitor <BR>
+          limitation data for the scanning frequency</BLOCKQUOTE>
+</TD>
+      </TR>
+    </TABLE></TD>
+  </TR>
+</TABLE></CENTER>
+
+</BODY>
+</HTML>
