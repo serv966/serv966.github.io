@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0J Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+  <META NAME="Author" CONTENT="Reiko Arise">
+  <TITLE>Service Manual T966</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><CENTER><TABLE BORDER="0" CELLPADDING="0" WIDTH="500" CELLSPACING="2">
+  <TR>
+    <TD>
+    <H3>USB Hub Operation Test</H3>
+
+    <P><TABLE WIDTH="350" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD WIDTH="100%" BGCOLOR="#ffffcc">
+        <B><A HREF="3_6a.html">Tools</A></B></TD> 
+      </TR>
+      <TR>
+        <TD WIDTH="100%" BGCOLOR="#ffe6ff">
+        <B>Test Procedure</B></TD> 
+      </TR>
+    </TABLE></P>
+
+    <H3><HR ALIGN=LEFT WIDTH="98%"></H3>
+
+    <H4>Test Procedure</H4>
+
+    <P>In case of installing Hub Tester Program in the root of the
+<BR>
+    &quot;C&quot; drive.</P>
+
+    <OL>
+      <LI>Turn on the Hub Tester.<BR>
+      Turning on, confirm the PWR LED lights (Red) and the DATA LED
+      blinks (Yellow). Otherwise, try to unplug and plug the power
+      cord of the tester.
+      <LI>Connect the USB cables.<BR>
+      Upstream port x 1 cable --- Host PC<BR>
+      Downstream ports x 4 cables --- Hub Tester<BR>
+      <IMG SRC="image/usbchk2.GIF" WIDTH="393" HEIGHT="163" ALIGN="BOTTOM"
+      BORDER="0" NATURALSIZEFLAG="3"><BR>
+      <IMG SRC="image/usbchk3.GIF" WIDTH="273" HEIGHT="421" ALIGN="BOTTOM"
+      BORDER="0" NATURALSIZEFLAG="3">
+      <LI>Switch the monitor on and set up the USB Hub.<BR>
+      Confirm if the following is in the &quot;Device Manager&quot;
+      window:<BR>
+      - &quot;Generic USB Hub&quot; appears under &quot;Universal Serial
+      Bus Controller&quot;
+      <LI>Restart the PC in the MS-DOS mode.<BR>
+      C: \WINDOWS&gt;
+      <LI>Type as follows; <BR>
+      C: \WINDOWS&gt;<U><FONT COLOR="#ff0000">cd\uht\2.10</FONT></U><BR>
+      C: \uht\2.10&gt;<U><FONT COLOR="#ff0000">b</FONT></U><FONT COLOR="#ff0000">
+      </FONT>(Perform the test program &quot;b&quot;)<BR>
+      When the test program &quot;b&quot; is O.K, the result is displayed
+      below.<BR>
+      <IMG SRC="image/usbchk4.GIF" WIDTH="345" HEIGHT="168" ALIGN="BOTTOM"
+      BORDER="0" NATURALSIZEFLAG="3"><BR>
+      &quot;TEST FAILED&quot; is displayed, but test result is OK because
+      of the over-current protection test program.<BR>
+      <LI>Type as follows; (Perform the test program &quot;a&quot;)<BR>
+      C: \uht\2.10&gt;<U><FONT COLOR="#ff0000">a</FONT></U><BR>
+      When the test program &quot;a&quot; is O.K, the result is displayed
+      below.<BR>
+      <IMG SRC="image/usbchk5.GIF" WIDTH="345" HEIGHT="168" ALIGN="BOTTOM"
+      BORDER="0" NATURALSIZEFLAG="3">
+      <LI>Confirm the result of the above 2 programs is O.K. Perform
+      this test in both bus-powered and self-powered.
+      <LI>Quit the MS-DOS mode. <BR>
+      C: \uht\2.10&gt;<U><FONT COLOR="#ff0000">exit</FONT></U>
+    </OL>
+
+    <P><TABLE BORDER="0" COLS="1" WIDTH="100%" CELLSPACING="2" CELLPADDING="0">
+      <TR>
+        <TD BGCOLOR="#ffccff">
+        <P>When connecting the channels (CH1~4) to the downstream ports
+        (Port 2~5) as the above drawing shows, the result is displayed
+        above. Even if connecting to different ports, it is no problem
+        if the result is O.K.</P>
+
+        <P>The sta files (O.K) and fal files (N.G) remains in the folder
+        2.10 as the result data of the test, so delete these files regularly.</TD> 
+      </TR>
+    </TABLE></TD>
+  </TR>
+</TABLE>&nbsp;</CENTER>
+
+</BODY>
+</HTML>
